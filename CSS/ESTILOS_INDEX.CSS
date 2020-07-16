@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing:border-box;
+}
+
+
+body{
+    background:url(../IMG/comesticos.jpg);
+    -webkit-background-size:cover ;
+    background-size:cover ;
+    background-attachment: fixed;
+}
+
+
+.contenedor .formulario  .titulo{
+    font-weight: normal;
+    font-family: cursive;
+    color: white;
+    text-align: center;
+    padding:10px 0;
+}
+.contenedor .formulario{
+    background: rgba(0, 0, 0, 0.6);
+    width: 90%;
+    max-width: 650px;
+    margin:  auto ;
+    padding: 5px 20px;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 3px;
+}
+
+.contenedor .formulario .label{
+    display: block;
+    color:white;
+    font-size: 16px;
+    font-family: cursive;
+    position: relative;
+}
+
+.contenedor .formulario .form-input{
+    background: rgb(0, 0, .7); 
+    border: none;
+    outline: none;
+    border-bottom:2px solid palevioletred;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 100px;
+    font-size: 14px;
+    color: white;
+    font-family: cursive;
+}
+
+.contenedor .formulario {
+    resize: vertical;
+    
+}
+
+.contenedor .formulario .bton-submit{
+    width: 40%;
+    font-family: cursive;
+    outline: none;
+    background: rgb(245, 192, 201);
+    font-size: 12px;
+    border:  none;
+    color: red;
+    padding: 16px 0 ;
+    cursor: pointer;
+    transition: all .5s ease;
+    margin: 0px 180px;
+
+}
