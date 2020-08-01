@@ -3,7 +3,7 @@ function iniciar(){
     var clave = document.getElementById('clave');
     if(usuario.value=="cos" && clave.value=="123"){
         
-        window.location.href="INICIO.html";
+        window.location.href="inicio.html";
        alert("INICIANDO...");
     } else{
         alert("**ERROR**");

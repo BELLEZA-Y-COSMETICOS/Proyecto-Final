@@ -5,14 +5,18 @@
 
   body {
     background: rgb(255, 214, 214);
-    background:url(../IMG/INICIO.jpeg);
-    -webkit-background-size:cover ;
-    background-size:cover ;
-    background-attachment: fixed;
 
   }
 
-  header{
+  .titulo{
+    font-weight: normal;
+    font-family: 'Ranchers', cursive;
+    color: palevioletred;
+    text-align: center;
+    padding:14px 0;
+    align-items: center;
+}
+header{
     width: 99%;
     margin: 8px auto;
     max-width: 1300px    
@@ -40,24 +44,15 @@
     color: rgb(255, 230, 234);
     text-decoration: none;
     font-family: cursive;
-
-
-
   }
-    .titulo{
-    font-size: 40px;
-    font-weight: normal;
-    font-family: 'Ranchers', cursive;
-    color: black;
-    text-align: center;
-    padding:35px 0;
-    align-items: center;
-}
-
-/*body img{*/
- /* padding-left: 20px;*/
- /* width: 50px;*/
-/*}*/
-
-
+  .info .mi-flex .col{
+    background: rgba(0, 0, 0, 0.6);
+    width: 90%;
+    max-width: 1000px;
+    margin:  auto ;
+    padding: 2px 20px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+  }
 

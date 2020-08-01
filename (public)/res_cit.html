@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scaleable=no , initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+  <title>RESERVACION DE CITAS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./css/estilos_res_cit.css">
+</head>
+
+<body>
+  <h1 class="titulo">RESERVACION DE CITAS</h1>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="inicio.html">INICIO</a></li>
+        <li><a href="res_cit.html">RESERVACION DE CITAS</a></li>
+        <li><a href="ven_pro.html">VENTAS DE PRODUCTOS</a></li>
+        <li><a href="servicios.html">SERVICIOS</a></li>
+        <li><a href="index.html">CERRAR</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="info">
+    <div class="mi-flex row">
+      <div class="col">
+
+        <h2 class="text-center text-white ">AGREGAR RESERVACION</h2>
+
+
+        <label class="text-white" for="">NOMBRE</label>
+        <input class="form-control " type="text" id="name">
+
+        <label class="mt-3 text-white for="">APELLIDOS</label>
+                    <input class=" form-control" type="text" id="apellidos">
+
+          <label class="mt-3 text-white" for="">IDENTIFICACION</label>
+          <input class="form-control" type="text" id="id">
+
+          <label class="mt-3 text-white" for="">SERVICIO A ADQUIRIR</label>
+          <select id="rol" class="form-control" name="" id="">
+            <option value="Docente"></option>
+            <option value="SERVICIO 1">SERVICIO 1</option>
+            <option value="SERVICIO 2">SERVICIO 2</option>
+          </select>
+          <button id="btnAgregar" onclick="agregarDatos()" class="btn btn-primary mt-3">Agregar Datos</button>
+          <button id="btnEditar" onclick="editarDatos()" class="btn btn-primary mt-3">Editar Datos</button>
+          <button id="btnActualizar" onclick="actualizarDatos()" class="btn btn-primary mt-3">Actualizar Datos</button>
+          <button id="btnEliminar" onclick="eliminarDatos()" class="btn btn-primary mt-3">Eliminar Datos</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="text-center">Direccion: <strong>SAN VICENTE DEL CAGUAN - CAQUETA</strong> </p>
+    <p class="texto-footer text-center">2020. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <!--Firbase-->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+
+  <script src="js/funciones.js"></script>
+
+</body>

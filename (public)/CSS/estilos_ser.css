@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(255, 214, 214);
+
+}
+
+.titulo{
+  font-weight: normal;
+  font-family: 'Ranchers', cursive;
+  color: palevioletred;
+  text-align: center;
+  padding:14px 0;
+  align-items: center;
+}
+header{
+  width: 99%;
+  margin: 8px auto;
+  max-width: 1300px    
+}
+
+ 
+header nav {
+  background: rgb(184, 182, 182);
+  overflow: hidden;
+
+}
+
+header nav ul {
+  list-style: none;
+    }
+
+header nav ul li {
+  float: left;
+
+}
+
+header nav ul li a {
+  padding: 10px 20px;
+  display: block;
+  color: rgb(255, 230, 234);
+  text-decoration: none;
+  font-family: cursive;
+}

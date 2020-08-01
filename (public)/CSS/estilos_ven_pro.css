@@ -5,14 +5,22 @@
 
   body {
     background: rgb(255, 214, 214);
-    background:url(../IMG/INICIO.jpeg);
+    background:url(../IMG/ven_pro.jpg);
     -webkit-background-size:cover ;
     background-size:cover ;
     background-attachment: fixed;
 
   }
 
-  header{
+  .titulo{
+    font-weight: normal;
+    font-family: 'Ranchers', cursive;
+    color: palevioletred;
+    text-align: center;
+    padding:14px 0;
+    align-items: center;
+}
+header{
     width: 99%;
     margin: 8px auto;
     max-width: 1300px    
@@ -40,24 +48,27 @@
     color: rgb(255, 230, 234);
     text-decoration: none;
     font-family: cursive;
-
-
-
   }
-    .titulo{
-    font-size: 40px;
+  
+section div img {
+      width: 120px;
+      padding: 10px 55px;
+  }
+
+  section div {
+      width: 250px;
+      background:   rgb(207, 206, 206);
+      display: inline-block;
+      margin: 10px 42px;
+  }
+
+.contenedor .titulo1{
+    font-size: 18px;
     font-weight: normal;
-    font-family: 'Ranchers', cursive;
-    color: black;
+    font-family: cursive;
+    color:  palevioletred;
     text-align: center;
-    padding:35px 0;
+    padding:0px 0px;
     align-items: center;
 }
-
-/*body img{*/
- /* padding-left: 20px;*/
- /* width: 50px;*/
-/*}*/
-
-
 
