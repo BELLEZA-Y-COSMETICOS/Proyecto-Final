@@ -28,30 +28,110 @@ var db = firebase.firestore();
 var idUsuario = document.getElementById('id');
 var txtname = document.getElementById('name');
 var apellidos = document.getElementById('apellidos');
-var opcion = document.getElementById('servicios');
+var opcion = document.getElementById('servicio');
 
 var btnAgregar = document.getElementById('btnAgregar');
-var btnEditar = document.getElementById('btnEditar');
-var btnActualizar = document.getElementById('btnActulizar');
-var btnEliminar = document.getElementById('btnEliminar');
+var btnActualizar = document.getElementById('btnActualizar');
+
+//var btnEditar = document.getElementById('btnEditar');
+//var btnBuscar = document.getElementById('btnBuscar');
+//var btnEliminar = document.getElementById('btnEliminar');
 
 
 function agregarDatos(user) {
-    db.collection("RESERVACIONES").add({
+    leerDatos();
+    db.collection("RESERVACIONES").doc(idUsuario.value).set({
         nombre: txtname.value,
         apellido: apellidos.value,
         identificacion: idUsuario.value,
-        servicio: opcion.value
+        servicio: opcion.value,
+
     })
         .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
-            alert('Reservacion agregada correctamente', docRef.id);
+            console.log("Document written with ID: ", docRef);
+            alert('Reservacion agregada correctamente');
             limpiarDatos();
         })
         .catch((error) => {
             console.error("Error: ", error);
         });
 }
+leerDatos();
+
+function leerDatos() {
+    listareservas.innerHTML = "";
+    btnActualizar.classList.add('d-none');
+
+    db.collection("RESERVACIONES").get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                listareservas.innerHTML += `
+                    <tr>
+                        <td>${doc.data().nombre}</td>
+                        <td>${doc.data().apellido}</td>
+                        <td>${doc.data().identificacion}</td>
+                        <td>${doc.data().servicio}</td>
+                        <td>
+                            <button onclick="eliminar('${doc.id}')" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                            <button onclick="editar('${doc.id}')" class="btn btn-info"><i class="far fa-edit"></i></button>
+                        </td>
+                    </tr>           
+                `;
+            });
+        })
+        .catch(function (error) {
+            console.log("Error: ", error);
+        });
+}
+
+function eliminar(idUsuario) {
+    db.collection("RESERVACIONES").doc(idUsuario).delete()
+        .then(() => {
+            alert('Se ha eliminado su reservacion');
+            console.log("Documento eliminado");
+            leerDatos();
+        }).catch((error) => {
+            console.error("Error: ", error);
+        });
+}
+
+function editar(identificacion) {
+
+    btnAgregar.classList.add('d-none');
+    btnActualizar.classList.remove('d-none');
+    db.collection("RESERVACIONES").doc(identificacion).get()
+        .then((doc) => {
+            txtname.value = doc.data().nombre;
+            apellidos.value = doc.data().apellido;
+            idUsuario.value = doc.data().identificacion
+            opcion.value = doc.data().servicio;
+
+        })
+        .catch((error) => {
+            console.log("Error: ", error);
+        });
+}
+
+function actualizarDatos() {
+    db.collection("RESERVACIONES").doc(idUsuario.value).update({
+        nombre: txtname.value,
+        apellido: apellidos.value,
+        servicio: opcion.value,
+    })
+        .then(() => {
+            limpiarDatos()
+            leerDatos();
+            btnActualizar.classList.add('d-none');
+            btnAgregar.classList.remove('d-none');
+            alert('Se han actulizado tus datos de la reserva');
+            console.log("Document successfully updated!");
+        })
+        .catch((error) => {
+            console.log("Error: ", error);
+        });;
+
+}
+
 
 function limpiarDatos() {
     txtname.value = "";
@@ -60,22 +140,4 @@ function limpiarDatos() {
     opcion.value = "";
 }
 
-function editarDatos(id) {
-    btnAgregar.classList.add('d-none');
-    btnActualizar.classList.remove('d-none');
-    
-    if (idUsuario.value == "123") {
-        db.collection("RESERVACIONES").doc(id).get()
-        .then((doc) => {
-            idUsuario.value = id;
-            txtname.value = doc.data().nombre;
-            apellidos.value = doc.data().apellido;
-            opcion.value = doc.data().servicio; 
-        })
-        .catch((error) => {
-            console.log("Error: ", error);
-        });
-    }else {
-        alert("**ERROR**");
-    }
-}
+

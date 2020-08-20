@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +6,10 @@
 
   body {
     background: rgb(255, 214, 214);
-
+    background:url(../IMG/res_cit.jpg);
+    -webkit-background-size:cover ;
+    background-size:cover ;
+    background-attachment: fixed;
   }
 
   .titulo{
@@ -13,9 +17,9 @@
     font-family: 'Ranchers', cursive;
     color: palevioletred;
     text-align: center;
-    padding:14px 0;
+    padding:15px 0;
     align-items: center;
-}
+  }
 header{
     width: 99%;
     margin: 8px auto;
@@ -28,7 +32,7 @@ header{
     overflow: hidden;
   
   }
-
+z
   header nav ul {
     list-style: none;
       }
@@ -38,13 +42,7 @@ header{
 
   }
 
-  header nav ul li a {
-    padding: 10px 20px;
-    display: block;
-    color: rgb(255, 230, 234);
-    text-decoration: none;
-    font-family: cursive;
-  }
+  
   .info .mi-flex .col{
     background: rgba(0, 0, 0, 0.6);
     width: 90%;
@@ -54,5 +52,9 @@ header{
     margin-top: 10px;
     padding-bottom: 20px;
     border-radius: 10px;
+    box-shadow: 3px 3px 10px 10px rgba(0, 0, 0, 0.8);
   }
-
+  footer{
+    font-size: 15px;
+    color: white;
+  }
