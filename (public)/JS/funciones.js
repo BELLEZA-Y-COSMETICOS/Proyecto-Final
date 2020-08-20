@@ -16,6 +16,7 @@ var idUsuario = document.getElementById('id');
 var txtname = document.getElementById('name');
 var apellidos = document.getElementById('apellidos');
 var opcion = document.getElementById('servicio');
+<<<<<<< HEAD
 
 //login y registro
 var emailUser = document.getElementById('emailUser');
@@ -23,6 +24,8 @@ var passUser = document.getElementById('passUser');
 
 var emailUsuarioLogueado = document.getElementById('emailUsuarioLogueado');
 var usuarioActual;
+=======
+>>>>>>> df1788b818b91483c2c83d4a7c30f243aafcb3f7
 
 var btnAgregar = document.getElementById('btnAgregar');
 var btnActualizar = document.getElementById('btnActualizar');
@@ -76,6 +79,7 @@ function leerDatos() {
         .catch(function (error) {
             console.log("Error: ", error);
         });
+<<<<<<< HEAD
 }
 
 function eliminar(idUsuario) {
@@ -91,6 +95,23 @@ function eliminar(idUsuario) {
 
 function editar(identificacion) {
     id.disabled = true;
+=======
+}
+
+function eliminar(idUsuario) {
+    db.collection("RESERVACIONES").doc(idUsuario).delete()
+        .then(() => {
+            alert('Se ha eliminado su reservacion');
+            console.log("Documento eliminado");
+            leerDatos();
+        }).catch((error) => {
+            console.error("Error: ", error);
+        });
+}
+
+function editar(identificacion) {
+
+>>>>>>> df1788b818b91483c2c83d4a7c30f243aafcb3f7
     btnAgregar.classList.add('d-none');
     btnActualizar.classList.remove('d-none');
     db.collection("RESERVACIONES").doc(identificacion).get()
@@ -100,6 +121,7 @@ function editar(identificacion) {
             idUsuario.value = doc.data().identificacion
             opcion.value = doc.data().servicio;
 
+<<<<<<< HEAD
         })
         .catch((error) => {
             console.log("Error: ", error);
@@ -120,6 +142,8 @@ function actualizarDatos() {
             btnAgregar.classList.remove('d-none');
             alert('Se han actulizado tus datos de la reserva');
             console.log("Document successfully updated!");
+=======
+>>>>>>> df1788b818b91483c2c83d4a7c30f243aafcb3f7
         })
         .catch((error) => {
             console.log("Error: ", error);
@@ -153,6 +177,7 @@ function registarUsuario() {
         });
 }
 
+<<<<<<< HEAD
 function login() {
     var uno = emailUser.value;
     firebase.auth().signInWithEmailAndPassword(uno, passUser.value)
@@ -191,5 +216,34 @@ function estado() {
 
 
 
+=======
+function actualizarDatos() {
+    db.collection("RESERVACIONES").doc(idUsuario.value).update({
+        nombre: txtname.value,
+        apellido: apellidos.value,
+        servicio: opcion.value,
+    })
+        .then(() => {
+            limpiarDatos()
+            leerDatos();
+            btnActualizar.classList.add('d-none');
+            btnAgregar.classList.remove('d-none');
+            alert('Se han actulizado tus datos de la reserva');
+            console.log("Document successfully updated!");
+        })
+        .catch((error) => {
+            console.log("Error: ", error);
+        });;
+
+}
+
+
+function limpiarDatos() {
+    txtname.value = "";
+    apellidos.value = "";
+    idUsuario.value = "";
+    opcion.value = "";
+}
+>>>>>>> df1788b818b91483c2c83d4a7c30f243aafcb3f7
 
 
